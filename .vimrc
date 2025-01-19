@@ -1,0 +1,15 @@
+set listchars=eol:$,nbsp:_,tab:--,trail:~,extends:>,precedes:<
+set expandtab
+set nu
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set nowrap
+set ruler
+set textwidth=80
+set relativenumber
+set cpoptions+=n
+set smartindent
+set autoindent
+set list
+syntax on
