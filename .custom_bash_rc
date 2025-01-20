@@ -7,4 +7,9 @@ export LS_OPTIONS='--color=auto'
 alias ll="ls $LS_OPTIONS -larth"
 
 ## Kube
-k="kubectl"
+export KD="--dry-run=client"
+export KDR="$KD -o yaml"
+export KDRJ="$KD -o json"
+export k="kubectl"
+export kc="$K create"
+export kg="$K get"
