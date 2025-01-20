@@ -1,15 +1,28 @@
-# prompt
+# Prompt
 PS1='\[\033[1;36m\]\u\[\033[1;33m\]@\[\033[1;31m\]\h\[\033[00m\]:\[\033[1;33m\]\w \[\033[1;34m\]\$\[\033[00m\] '
 
-# aliases
+# Aliases
 ## ls
 export LS_OPTIONS='--color=auto'
 alias ll="ls $LS_OPTIONS -larth"
 
 ## Kube
 export KD="--dry-run=client"
-export KDR="$KD -o yaml"
-export KDRJ="$KD -o json"
+export KDR="--dry-run=client -o yaml"
+export KDRJ="--dry-run=client -o json"
 export k="kubectl"
-alias kc="$K create"
-alias kg="$K get"
+
+# Functions
+function kc { $k --dry-run=client -o yaml create "$@"; }
+function krp { $k --dry-run=client -o yaml run pod "$@"; }
+function kg { $k get "$@"; }
+function kg.all { $k get all -A; }
+function kg.ns { $k get ns -A; }
+function kg.no { $k get no -A; }
+function kg.rs { $k get rs -A; }
+function kg.rc { $k get rc -A; }
+function kg.ds { $k get ds -A; }
+function kg.deploy { $k get deploy -A; }
+function kg.po { $k get pods -A; } 
+function kg.cm { $k get cm -A; }
+
