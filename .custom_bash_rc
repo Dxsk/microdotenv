@@ -15,6 +15,10 @@ export k="kubectl"
 # Functions
 function kc { $k --dry-run=client -o yaml create "$@"; }
 function krp { $k --dry-run=client -o yaml run pod "$@"; }
+function ka { $k apply -f $@; }
+function kaf { $k apply --force -f $@; }
+function kre { $k replace -f $@; }
+function kref { $k replace --force -f $@; } 
 function kg { $k get "$@"; }
 function kg.all { $k get all -A; }
 function kg.ns { $k get ns -A; }
